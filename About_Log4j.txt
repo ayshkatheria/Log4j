@@ -1,1 +1,23 @@
 Log4j API is used for adding console, file and email level logs.
+
+
+Pre-requisites:-
+1. Add log4j1 jar
+2. Add java mail jar
+
+------------------------------------------------------------------------------------------------------------------------
+
+> Import apache package for Logger class
+>We can add logger configuration by using :-
+  - log4j.xml file
+  - log4j.properties file
+
+
+log4j.xml :- "Error" have "high level priority" and "Debug" has "low level priority", meaning if we define level or
+             priority in root level as error then only error logs will print in console whereas if we define priority
+             as debug then every line of logs will print.
+
+> For console logs add appender at concole level and give reference in root.
+> For File logs add appender at file level and give reference in root.
+Note:- define append parameter as false otherwise it will always write logs in same file
+       <param name="Append" value="false"/>
