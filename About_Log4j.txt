@@ -1,0 +1,1 @@
+Log4j API is used for adding console, file and email level logs.
