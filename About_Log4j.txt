@@ -2,22 +2,40 @@ Log4j API is used for adding console, file and email level logs.
 
 
 Pre-requisites:-
-1. Add log4j1 jar
+1. Add log4j1 jar, log files(auto generated) , Logger class
 2. Add java mail jar
 
 ------------------------------------------------------------------------------------------------------------------------
+Log4j API are of two types :-
+1. Log4j1
+2. Log4j2
 
 > Import apache package for Logger class
 >We can add logger configuration by using :-
   - log4j.xml file
   - log4j.properties file
 
+-----------------------------------------  Log4j 1  ---------------------------------------------------------------------
 
-log4j.xml :- "Error" have "high level priority" and "Debug" has "low level priority", meaning if we define level or
+log4j.xml :- "Error" has "high level priority" and "Debug" has "low level priority", meaning if we define level or
              priority in root level as error then only error logs will print in console whereas if we define priority
              as debug then every line of logs will print.
 
-> For console logs add appender at concole level and give reference in root.
+> For console logs add appender at console level and give reference in root.
 > For File logs add appender at file level and give reference in root.
 Note:- define append parameter as false otherwise it will always write logs in same file
        <param name="Append" value="false"/>
+> For Email logs add appender <appender name="ERROR_MAIL" class="SecureSMTPAppender">
+ and also add HTML appender but adding appender for mail is not a good approach better use JAVAMAIL API for this.
+
+> If you want to create a new file everytime instead of appending new logs or using same file
+log4j.appender.Appender.File= /Users/dkatheria/Testing Content/Log4j_project/log4jContent/Log4j/app_${current.date}_log.txt
+ Date d = new Date();
+ System.setProperty("current.date",d.toString().replace(":","_").replace(" ","_"));
+
+
+ ----------------------------------------  Log4j 2----------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,4 @@
+2023-07-16 01:03:00 INFO  HelloLog4j:18 - This is info log
+ 2023-07-16 01:03:00 ERROR HelloLog4j:19 - This is error log
+ 2023-07-16 01:03:00 WARN  HelloLog4j:20 - This is warn log
+ 
